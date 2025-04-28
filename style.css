@@ -1,0 +1,139 @@
+/* Resetting body and html */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Full-screen background video */
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* Ensures the video covers the entire screen */
+  z-index: -1;  /* Keeps video behind content */
+}
+
+/* Yoru Background with Glow and Card Left Shift */
+
+/* Body and Yoru background with glow */
+body {
+  margin: 0;
+  padding: 0;
+  background: url('yoru-bg.jpg') no-repeat center center/cover;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: flex-start; /* Left Shift the Card */
+  align-items: center;
+  height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark filter over background */
+body:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+  box-shadow: 0 0 50px 20px #0ff; /* Neon glow effect */
+}
+
+/* Card styling */
+.card {
+  background: linear-gradient(135deg, #2f2727, #232323);
+  padding: 30px;
+  border: 2px solid #ff4655;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff4655aa, 0 0 30px #0ff;
+  text-align: center;
+  width: 320px;
+  transition: 0.3s;
+  margin-left: 250px; /* Left Shift */
+}
+
+/* Hover effect */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #59ff46, 0 0 40px rgb(255, 0, 0);
+}
+
+/* Profile Image */
+.profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  border: 3px solid #0ff;
+}
+
+/* Name */
+h1 {
+  font-size: 26px;
+  margin: 10px 0 5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #5debd3; /* Fixed color value */
+}
+
+/* Tagline */
+.tagline {
+  font-size: 16px;
+  color: #aaa;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* Links */
+.links a {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  background: #ff4655;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Link hover effect */
+.links a:hover {
+  background: #0ff;
+  color: #121212;
+  transform: translateY(-3px);
+}
+
+/* Quote */
+.quote {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #ccc;
+  font-style: italic;
+}
+/* Adding custom font using @font-face */
+@font-face {
+  font-family: 'GodOfWarFont'; /* Name your font */
+  src: url('C:\Users\Vashu\Desktop\shankar card\fonts') format('truetype'); /* Adjust path to the font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply the custom font */
+body {
+  font-family: 'GodOfWarFont', serif;
+  color: white;
+}
+
+h1 {
+  font-family: 'GodOfWarFont', serif;
+  font-size: 3em;
+  font-weight: bold;
+}
