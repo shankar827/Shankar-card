@@ -1,60 +1,54 @@
 /* Resetting body and html */
-body, html {
+html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Full-screen background video */
+/* Background Video */
 #video-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Ensures the video covers the entire screen */
-  z-index: -1;  /* Keeps video behind content */
+  object-fit: cover;
+  z-index: -2;
 }
 
-/* Yoru Background with Glow and Card Left Shift */
-
-/* Body and Yoru background with glow */
-body {
-  margin: 0;
-  padding: 0;
-  background: url('yoru-bg.jpg') no-repeat center center/cover;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  justify-content: flex-start; /* Left Shift the Card */
-  align-items: center;
-  height: 100vh;
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Dark filter over background */
-body:before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+/* Dark overlay over video */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent dark */
   z-index: -1;
-  box-shadow: 0 0 50px 20px #0ff; /* Neon glow effect */
 }
 
-/* Card styling */
+/* Container to center the card */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Styling */
 .card {
   background: linear-gradient(135deg, #2f2727, #232323);
-  padding: 30px;
+  padding: 30px 20px;
   border: 2px solid #ff4655;
   border-radius: 20px;
   box-shadow: 0 0 20px #ff4655aa, 0 0 30px #0ff;
   text-align: center;
-  width: 320px;
-  transition: 0.3s;
-  margin-left: 250px; /* Left Shift */
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  transition: 0.3s ease;
 }
 
 /* Hover effect */
@@ -65,21 +59,20 @@ body:before {
 
 /* Profile Image */
 .profile-img {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 20px;
   border: 3px solid #0ff;
 }
 
-/* Name */
+/* Name Styling */
 h1 {
-  font-size: 26px;
+  font-size: 2em;
   margin: 10px 0 5px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #5debd3; /* Fixed color value */
+  color: #5debd3;
 }
 
 /* Tagline */
@@ -90,7 +83,7 @@ h1 {
   font-style: italic;
 }
 
-/* Links */
+/* Links Section */
 .links a {
   display: block;
   margin: 10px 0;
@@ -104,7 +97,7 @@ h1 {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Link hover effect */
+/* Link hover */
 .links a:hover {
   background: #0ff;
   color: #121212;
@@ -118,22 +111,63 @@ h1 {
   color: #ccc;
   font-style: italic;
 }
-/* Adding custom font using @font-face */
-@font-face {
-  font-family: 'GodOfWarFont'; /* Name your font */
-  src: url('C:\Users\Vashu\Desktop\shankar card\fonts') format('truetype'); /* Adjust path to the font file */
-  font-weight: normal;
-  font-style: normal;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+    padding: 20px 15px;
+    width: 90%;
+    max-width: 350px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .tagline {
+    font-size: 14px;
+  }
+
+  .links a {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .quote {
+    font-size: 13px;
+  }
 }
 
-/* Apply the custom font */
-body {
-  font-family: 'GodOfWarFont', serif;
-  color: white;
-}
+@media (max-width: 480px) {
+  .card {
+    padding: 15px 10px;
+    max-width: 300px;
+  }
 
-h1 {
-  font-family: 'GodOfWarFont', serif;
-  font-size: 3em;
-  font-weight: bold;
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .links a {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .quote {
+    font-size: 12px;
+  }
 }
