@@ -1,9 +1,15 @@
-/* Resetting body and html */
+@font-face {
+  font-family: '1';
+  src: url('fonts/1.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
+  font-family: '1', sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'Poppins', sans-serif;
 }
 
 /* Background Video */
