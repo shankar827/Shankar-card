@@ -1,19 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shankar Chaurasiya | Personal Card</title>
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- Google Fonts (Backup Font) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Overlay Style */
+    #start-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.85);
+      color: #fff;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    #start-overlay span {
+      font-size: 1rem;
+      margin-top: 10px;
+      opacity: 0.8;
+    }
+
+    /* Optional animation */
+    @keyframes pulse {
+      0% { opacity: 0.6; }
+      50% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    #start-overlay::after {
+      content: "▶ Tap to Start";
+      animation: pulse 2s infinite;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Background Video (Desktop) -->
+  <!-- 🔊 Background Music -->
+  <audio id="bg-music" loop>
+    <source src="audio/bgm.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+<!-- 🎛️ Play/Pause Button -->
+<button onclick="toggleMusic()" class="music-btn">🔊 Play/Pause</button>
+  <!-- 🖱️ Start Overlay -->
+  <div id="start-overlay">
+    <div>Welcome to Shankar's World 🌍</div>
+    <span>Click anywhere to begin</span>
+  </div>
+
+  <!-- Background Video -->
   <video autoplay muted loop id="video-background">
-    <source src="yoru-bg.mp4" type="video/mp4">
+    <source src="yoru-bg.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
@@ -21,9 +70,9 @@
   <div class="overlay"></div>
 
   <!-- Main Card Content -->
-  <div class="container">
+  <div class="container" style="display: none;" id="main-content">
     <div class="card">
-      <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+      <img src="profile.jpg" alt="Profile Picture" class="profile-img"/>
       <h1>Shankar Chaurasiya</h1>
       <p class="tagline">Economics Student | Dreamer | Fighter</p>
 
@@ -35,6 +84,21 @@
       <p class="quote">"Success is not an accident, it's hard work, perseverance, and love for what you are doing."</p>
     </div>
   </div>
+
+  <!-- Script to handle music and overlay -->
+  <script>
+    const overlay = document.getElementById("start-overlay");
+    const music = document.getElementById("bg-music");
+    const main = document.getElementById("main-content");
+
+    overlay.addEventListener("click", () => {
+      overlay.style.display = "none"; // hide overlay
+      main.style.display = "block";   // show content
+      music.play().catch((e) => {
+        console.log("Autoplay error:", e);
+      });
+    });
+  </script>
 
 </body>
 </html>
