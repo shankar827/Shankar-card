@@ -1,22 +1,18 @@
-const modal = document.querySelector('.img-modal');
-const modalImg = document.querySelector('.img-modal img');
-const closeBtn = document.querySelector('.img-modal .close');
+<script>
+  document.getElementById("anonymousForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
 
-document.querySelectorAll('.profile-img').forEach(img => {
-  img.addEventListener('click', () => {
-    modal.style.display = 'flex';
-    modalImg.src = img.src;
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        document.getElementById("confirmationMessage").style.display = "block";
+        form.reset();
+      }
+    });
   });
-});
-
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  modalImg.src = '';
-});
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    modalImg.src = '';
-  }
-});
+</script>

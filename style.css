@@ -247,3 +247,74 @@ h1 {
     font-size: 12px;
   }
 }
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.anonymous-message-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 1000;
+
+  /* Slide in animation */
+  animation: slideInRight 0.6s ease-out;
+
+  /* Glassmorphism style */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.anonymous-message-container h2 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#anonymousForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#anonymousInput {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+#anonymousForm button {
+  padding: 10px;
+  background-color: #ff4655;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+#anonymousForm button:hover {
+  background-color: #0ff;
+  color: #121212;
+}
+
+#confirmationMessage {
+  color: #0f0;
+  margin-top: 10px;
+}
