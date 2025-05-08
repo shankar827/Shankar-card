@@ -6,6 +6,7 @@
   <title>Shankar Chaurasiya | Personal Card</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
 
   <style>
     /* Overlay Style */
@@ -48,7 +49,7 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      bakgr likh sakta hai rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.85);
       padding: 15px;
       border-radius: 10px;
       z-index: 1000;
@@ -99,13 +100,13 @@
 
   <!-- 🔊 Background Music -->
   <audio id="bg-music" loop>
-    <source src="audio/bgm.mp3" type="audio/mpeg" />
+    <source src="/assets/audio/bgm.mp3" type="audio/mpeg" />
     Your browser does not support the audio element.
   </audio>
 
   <!-- 🖱️ Start Overlay -->
   <div id="start-overlay">
-    <div>Welcome to Shankar's World 🌍</div>
+    <div>Welcome to Shankar's World <i class="fa-solid fa-globe fa-flip fa-2xl" style="color: #f70808;"></i></div>
     <span>Click anywhere to begin</span>
   </div>
 
@@ -126,12 +127,20 @@
       <p class="tagline">Economics Student | Dreamer | Fighter</p>
 
       <div class="links">
-        <a href="https://instagram.com/notshvnkar" target="_blank">Instagram</a>
-        <a href="https://linkedin.com/in/shankar-chaurasiya-55053b253/" target="_blank">LinkedIn</a>
-        <a href="https://tracker.gg/valorant/profile/riot/phe9menal%23P9ML" target="_blank">TRN</a>
+        <a href="https://instagram.com/notshvnkar" target="_blank">
+          <i class="fa-brands fa-instagram fa-bounce fa-2xl" style="color: #d30afb"></i> Instagram
+        </a>
+        <a href="https://linkedin.com/in/shankar-chaurasiya-55053b253/" target="_blank">
+          <i class="fa-brands fa-linkedin fa-fade fa-2xl" style="color: #fef88d;"></i> Linkedin
+        </a>
+        <a href="https://tracker.gg/valorant/profile/riot/phe9menal%23P9ML" target="_blank">
+          <i class="fa-solid fa-crosshairs fa-spin fa-xl" style="color: #0e0f0f;"></i> TRN
+        </a>
+        <a href="https://open.spotify.com/playlist/1cefOoZBCu3iGASFDzQfnR?si=ATtAcHG8SB-oJ5-_XwaOmw&pi=U1JZdNXgTla60&nd=1&utm_medium=organic&_branch_referrer=H4sIAAAAAAAAA8WOwWrDMBBEv0a%2Bxa7tNpSCCU6CU3JoaJNCyMUosmSLrLViJWHSQ7%2B9cqHfUJjD8B4DM3hv3UuWOYteq3vKrU1Bm1u2soRdEL5CK03CikcVANpAUA3zhJU1K5qYWad%2Fa4FjRBb4HbTzseZCqgNe1ptQ6l19bLZf78p8sLJxmpXb%2BuRr8bp7Pq4XuH9atOeJH8aJFUs72898f%2Bnezv0J%2BPLh9wEHuHJx%2B78XEZouwjxRkvtAskLqudEi%2BSapJJE2fXslnJykajMQjvIHKqx8dGEBAAA%3D&product=open&%24full_url=https%3A%2F%2Fopen.spotify.com%2Fplaylist%2F1cefOoZBCu3iGASFDzQfnR%3Fsi%3DATtAcHG8SB-oJ5-_XwaOmw%26pi%3DU1JZdNXgTla60&feature=organic&_branch_match_id=1358375974708811935" target="_blank">
+          <i class="fa-brands fa-spotify fa-shake fa-xl" style="color: #50ff05;"></i> Spotify
+        </a>
       </div>
-
-      <p class="quote">"Success is not an accident, it's hard work, perseverance, and love for what you are doing."</p>
+      <p class="quote">"No amount of money ever bought a second of time."</p>
     </div>
   </div>
 
@@ -140,7 +149,10 @@
     <h2>Send Anonymous Message</h2>
     <form id="anonymousForm" action="https://formspree.io/f/xnnddaad" method="POST">
       <input type="text" name="message" id="anonymousInput" placeholder="Hey Anonymous..." required>
-      <button type="submit">Send</button>
+      <button type="submit">
+        Send
+        <i class="fa-regular fa-paper-plane fa-bounce fa-xl" style="color: #000000;"></i>  
+      </button>
     </form>
     <div id="confirmationMessage" style="display: none;">Message sent ✅</div>
   </div>
